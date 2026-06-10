@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peto's Greek Cuisine — Authentic Greek Restaurant, Carmel IN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --parchment: #EDE5D0;
+    --sand: #D4C5A0;
+    --terracotta: #C4623A;
+    --terracotta-dark: #9E4A27;
+    --terracotta-light: #E8896A;
+    --olive: #6B7C3A;
+    --olive-light: #8A9E52;
+    --deep-blue: #1A2F5E;
+    --aegean: #2A5F8F;
+    --aegean-light: #4A89BC;
+    --gold: #C9963A;
+    --gold-light: #E5B85A;
+    --ink: #1C1A16;
+    --ink-soft: #3A3630;
+    --muted: #7A7060;
+    --white: #FFFDF8;
+    --section-gap: 7rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 98, 58, 0.15);
+    transition: all 0.3s ease;
+  }
+  .nav-logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; }
+  .nav-logo-main { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.04em; color: var(--terracotta-dark); line-height: 1; }
+  .nav-logo-sub { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; color: var(--ink-soft); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta { background: var(--terracotta) !important; color: var(--white) !important; padding: 0.55rem 1.4rem !important; border-radius: 2px !important; font-weight: 500 !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--terracotta-dark) !important; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0F1C3A 0%, #1A2F5E 40%, #2A4A7A 70%, #1E3A60 100%);
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden; padding: 7rem 3rem 5rem;
+  }
+  .hero-bg-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M30 0L60 30L30 60L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); background-size: 40px 40px; }
+  .hero-accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--terracotta)); }
+  .hero-greek-border { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; overflow: hidden; }
+  .hero-greek-border svg { width: 100%; height: 100%; }
+  .hero-content { position: relative; max-width: 820px; }
+  .hero-eyebrow { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold-light); flex-shrink: 0; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 7vw, 6rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; color: var(--white); margin-bottom: 0.3rem; }
+  .hero-title em { font-style: italic; font-weight: 400; color: var(--terracotta-light); display: block; }
+  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.65); margin: 1.5rem 0 2.5rem; max-width: 520px; line-height: 1.6; }
+  .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--terracotta); color: var(--white); padding: 0.9rem 2.2rem; border-radius: 2px; border: none; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; display: inline-block; }
+  .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--white); padding: 0.9rem 2.2rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.4); font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; display: inline-block; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.08); }
+  .hero-info-strip { position: absolute; bottom: 70px; right: 3rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+  .hero-info-item { font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 300; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; }
+  .hero-info-item strong { color: rgba(255,255,255,0.85); font-weight: 400; }
+
+  /* ===== SECTION COMMON ===== */
+  section { padding: var(--section-gap) 3rem; }
+  .section-label { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.35em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+  .section-label::after { content: ''; flex: 0 0 30px; height: 1px; background: var(--terracotta); opacity: 0.5; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 600; line-height: 1.15; color: var(--ink); }
+  .section-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+
+  /* ===== DIVIDER ===== */
+  .meander-divider { width: 100%; height: 20px; overflow: hidden; background: transparent; }
+  .meander-divider svg { width: 100%; height: 20px; display: block; }
+
+  /* ===== ABOUT ===== */
+  .about-section { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; padding: 0; }
+  .about-image-col { position: relative; overflow: hidden; min-height: 600px; background: linear-gradient(160deg, #8B6914 0%, #C4935C 40%, #8B4513 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem; }
+  .about-greek-quote { position: relative; z-index: 1; font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1; color: rgba(255,255,255,0.15); margin-bottom: 1.5rem; font-style: italic; }
+  .about-image-overlay { position: relative; z-index: 1; }
+  .about-image-stat { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 700; color: var(--white); line-height: 1; }
+  .about-image-stat-label { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.65); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 0.4rem; }
+  .about-content-col { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+  .about-lead { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; font-style: italic; color: var(--terracotta); margin: 1.5rem 0; line-height: 1.5; }
+  .about-body { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.5rem; }
+  .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+  .pillar { border-left: 2px solid var(--terracotta); padding-left: 1rem; }
+  .pillar-title { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.3rem; }
+  .pillar-text { font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+
+  /* ===== MENU ===== */
+  .menu-section { background: var(--cream); }
+
+  /* Greek pattern banner for menu */
+  .menu-greek-banner {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(160deg, #0F1C3A 0%, #1A2F5E 60%, #152447 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    border-radius: 4px;
+  }
+  .menu-greek-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M30 0L60 30L30 60L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 30px 30px;
+  }
+  .menu-greek-banner-text {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .menu-greek-banner-line {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--terracotta));
+  }
+
+  .menu-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; }
+  .menu-tabs {
+    display: flex; gap: 0; border-bottom: 1px solid var(--sand);
+    margin-bottom: 0; overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  .menu-tab { padding: 0.7rem 1.2rem; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; }
+  .menu-tab.active { color: var(--terracotta); border-bottom-color: var(--terracotta); }
+  .menu-tab:hover { color: var(--terracotta-dark); }
+  .menu-panel { display: none; }
+  .menu-panel.active { display: block; }
+
+  /* Category header inside panel */
+  .menu-category-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid var(--parchment);
+    margin-bottom: 2rem;
+  }
+  .menu-category-img {
+    width: 80px; height: 80px; border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--terracotta);
+    flex-shrink: 0;
+  }
+  .menu-category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 600;
+    color: var(--ink);
+  }
+  .menu-category-title em {
+    font-style: italic; font-weight: 400; color: var(--terracotta);
+    font-size: 1rem; display: block; margin-top: 0.2rem;
+  }
+
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--sand); }
+  .menu-item { background: var(--white); padding: 1.8rem; transition: all 0.25s; cursor: default; position: relative; overflow: hidden; }
+  .menu-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--terracotta); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .menu-item:hover::before { transform: scaleX(1); }
+  .menu-item:hover { background: #FFFAF5; }
+
+  /* Menu items WITH images */
+  .menu-item-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .menu-item:hover .menu-item-img { transform: scale(1.03); }
+  .menu-item-img-wrap { overflow: hidden; border-radius: 2px; margin-bottom: 1rem; }
+
+  .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.5rem; }
+  .menu-item-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .menu-item-price { font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--terracotta); flex-shrink: 0; }
+  .menu-item-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; font-style: italic; }
+  .menu-item-tag { display: inline-block; margin-top: 0.7rem; font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.2rem 0.7rem; border: 1px solid var(--olive-light); color: var(--olive); border-radius: 2px; }
+  .menu-cta { text-align: center; margin-top: 3rem; }
+
+  /* Greek scene dividers inside menu */
+  .menu-scene-divider {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #1a2f5e 0%, #2a5f8f 50%, #1a2f5e 100%);
+    position: relative;
+    overflow: hidden;
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-scene-divider::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 30px,
+      rgba(255,255,255,0.5) 30px,
+      rgba(255,255,255,0.5) 31px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 30px,
+      rgba(255,255,255,0.5) 30px,
+      rgba(255,255,255,0.5) 31px
+    );
+  }
+  .menu-scene-quote {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 700px;
+  }
+  .menu-scene-quote::before, .menu-scene-quote::after {
+    content: '✦';
+    color: var(--gold-light);
+    font-size: 0.8rem;
+    margin: 0 1rem;
+    font-style: normal;
+  }
+
+  /* ===== EXPERIENCE ===== */
+  .experience-section { background: linear-gradient(170deg, #0F1C3A 0%, #1A2F5E 60%, #152447 100%); position: relative; overflow: hidden; }
+  .experience-section::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='1'/%3E%3C/svg%3E"); background-size: 80px 80px; }
+  .experience-inner { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .experience-section .section-label { color: var(--gold-light); }
+  .experience-section .section-label::after { background: var(--gold-light); }
+  .experience-section .section-title { color: var(--white); }
+  .experience-section .section-title em { color: var(--terracotta-light); }
+  .experience-lead { font-size: 1.1rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-top: 1.5rem; }
+  .service-cards { display: flex; flex-direction: column; gap: 1px; }
+  .service-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 1.8rem 2rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: all 0.3s; }
+  .service-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(196, 98, 58, 0.4); }
+  .service-card-icon { width: 44px; height: 44px; flex-shrink: 0; border: 1px solid var(--terracotta); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--terracotta); font-size: 1.2rem; }
+  .service-card-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 0.4rem; }
+  .service-card-text { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .service-card-rating { margin-top: 0.6rem; display: flex; gap: 3px; }
+  .star { color: var(--gold-light); font-size: 0.75rem; }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials-section { background: var(--parchment); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 3.5rem; background: var(--sand); }
+  .testimonial-card { background: var(--white); padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .testimonial-stars { display: flex; gap: 4px; }
+  .testimonial-text { font-family: 'Playfair Display', serif; font-size: 1rem; font-style: italic; color: var(--ink-soft); line-height: 1.7; flex: 1; }
+  .testimonial-author { border-top: 1px solid var(--parchment); padding-top: 1rem; }
+  .testimonial-name { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; color: var(--ink); text-transform: uppercase; }
+  .testimonial-source { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 300; color: var(--muted); margin-top: 2px; }
+  .testimonial-quote-mark { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1; color: var(--terracotta); opacity: 0.2; margin-bottom: -0.5rem; }
+
+  /* ===== RESERVATIONS ===== */
+  .reservation-section { background: var(--white); display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; padding: 0; align-items: stretch; }
+  .reservation-content { padding: 6rem 4rem; }
+  .reservation-aside { background: var(--terracotta); padding: 6rem 3rem; display: flex; flex-direction: column; gap: 2rem; justify-content: center; position: relative; overflow: hidden; }
+  .reservation-aside::before { content: ''; position: absolute; inset: 0; opacity: 0.08; background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='white' fill-opacity='1'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='white' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E"); background-size: 30px 30px; }
+  .aside-item { position: relative; z-index: 1; }
+  .aside-item-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.4rem; }
+  .aside-item-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--white); }
+  .aside-item-value a { color: var(--white); text-decoration: none; }
+  .aside-divider { border: none; border-top: 1px solid rgba(255,255,255,0.2); }
+  .form-group { margin-bottom: 1.5rem; }
+  .form-label { display: block; font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  .form-input, .form-select { width: 100%; padding: 0.85rem 1rem; background: var(--cream); border: 1px solid var(--sand); border-radius: 2px; outline: none; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--ink); transition: border-color 0.2s; appearance: none; }
+  .form-input:focus, .form-select:focus { border-color: var(--terracotta); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* ===== FOOTER ===== */
+  footer { background: var(--ink); color: rgba(255,255,255,0.55); padding: 4rem 3rem 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-logo-main { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+  .footer-logo-sub { font-family: 'Jost', sans-serif; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .footer-tagline { margin-top: 1rem; font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.4); max-width: 280px; }
+  .footer-col-title { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--white); margin-bottom: 1.2rem; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a { text-decoration: none; font-size: 0.85rem; color: rgba(255,255,255,0.4); transition: color 0.2s; font-family: 'Jost', sans-serif; font-weight: 300; }
+  .footer-links a:hover { color: var(--terracotta-light); }
+  .footer-contact-item { font-family: 'Jost', sans-serif; font-size: 0.83rem; font-weight: 300; color: rgba(255,255,255,0.4); margin-bottom: 0.6rem; line-height: 1.5; }
+  .footer-contact-item a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 300; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
+  .footer-social { display: flex; gap: 0.8rem; }
+  .social-btn { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem; font-family: 'Jost', sans-serif; transition: all 0.2s; }
+  .social-btn:hover { border-color: var(--terracotta); color: var(--terracotta-light); }
+
+  /* ===== GREEK ORNAMENT ===== */
+  .ornament { text-align: center; color: var(--terracotta); opacity: 0.3; font-size: 1.5rem; margin: 2rem 0; letter-spacing: 0.3em; }
+
+  /* ===== ANNOUNCEMENT ===== */
+  .announcement-bar { background: var(--terracotta-dark); color: var(--white); text-align: center; padding: 0.6rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; }
+  .announcement-bar strong { font-weight: 500; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-eyebrow { animation: fadeUp 0.7s 0.2s both; }
+  .hero-title { animation: fadeUp 0.7s 0.4s both; }
+  .hero-subtitle { animation: fadeUp 0.7s 0.6s both; }
+  .hero-actions { animation: fadeUp 0.7s 0.8s both; }
+  .hero-info-strip { animation: fadeUp 0.7s 1s both; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .about-section, .reservation-section { grid-template-columns: 1fr; }
+    .about-image-col { min-height: 280px; }
+    .menu-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .experience-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-pillars { grid-template-columns: 1fr; }
+    .hero-info-strip { display: none; }
+    .menu-tabs { overflow-x: auto; }
+    .menu-category-header { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 600px) {
+    .menu-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  🍷 <strong>Bar Coming Soon</strong> &nbsp;·&nbsp; Reserve your table: <strong>(317) 810-1000</strong> &nbsp;·&nbsp; 15 W. Main Street, Carmel, IN
+</div>
+
+<!-- Navigation -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-main">Peto's</span>
+    <span class="nav-logo-sub">Greek Cuisine · Carmel, IN</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://order.online/business/petos-family-230146" target="_blank" class="nav-cta">Order Online</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-accent-line"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Carmel, Indiana · Est. Family Tradition</p>
+    <h1 class="hero-title">
+      Authentic Greek<br>
+      <em>Flavors from the Aegean</em>
+    </h1>
+    <p class="hero-subtitle">
+      Handcrafted recipes passed down through generations — from the islands of Greece to your table in the heart of Carmel.
+    </p>
+    <div class="hero-actions">
+      <a href="#reservation" class="btn-primary">Reserve a Table</a>
+      <a href="#menu" class="btn-outline">Explore the Menu</a>
+    </div>
+  </div>
+  <div class="hero-info-strip">
+    <div class="hero-info-item"><strong>Mon – Thu</strong>&nbsp; 11am – 9:30pm</div>
+    <div class="hero-info-item"><strong>Fri – Sat</strong>&nbsp; 11am – 10:30pm</div>
+    <div class="hero-info-item"><strong>Sunday</strong>&nbsp; 12pm – 9pm</div>
+  </div>
+  <div class="hero-greek-border">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 L0,0 L1440,0 L1440,60 Q720,20 0,60Z" fill="#F5F0E8"/>
+    </svg>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section" id="about">
+  <div class="about-image-col">
+    <div class="about-greek-quote">Καλώς ήρθατε</div>
+    <div class="about-image-overlay">
+      <div class="about-image-stat">15+</div>
+      <div class="about-image-stat-label">Years serving authentic Greek cuisine</div>
+    </div>
+  </div>
+  <div class="about-content-col">
+    <p class="section-label">Our Philosophy</p>
+    <h2 class="section-title">Where Greece Meets <em>Your Table</em></h2>
+    <p class="about-lead">"We bring the soul of Greece to every dish we serve."</p>
+    <p class="about-body">
+      At Peto's Greek Cuisine, every plate tells a story. We source the finest Mediterranean ingredients — real Kefalograviera cheese, hand-picked Kalamata olives, vine leaves wrapped by hand — and prepare them with the same care and integrity our family has upheld for generations.
+    </p>
+    <p class="about-body">
+      From our house-made Pastitsio to the flaming Saganaki tableside, we focus on simplicity, freshness, and a hospitality that makes every guest feel like family.
+    </p>
+    <div class="about-pillars">
+      <div class="pillar">
+        <p class="pillar-title">Authentic Recipes</p>
+        <p class="pillar-text">Traditional Greek dishes prepared from scratch, the way they've always been made.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Fresh Ingredients</p>
+        <p class="pillar-text">Carefully sourced Mediterranean produce, cheeses, and seafood delivered fresh.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Warm Hospitality</p>
+        <p class="pillar-text">Attentive, personalized service that turns a meal into a memory.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Family-Owned</p>
+        <p class="pillar-text">A true family restaurant with heart, soul, and pride in every detail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FULL MENU SECTION ===== -->
+<section class="menu-section" id="menu">
+  <div class="menu-header">
+    <div>
+      <p class="section-label">The Menu</p>
+      <h2 class="section-title">A Journey Through <em>Greek Cuisine</em></h2>
+    </div>
+    <a href="https://order.online/business/petos-family-230146" target="_blank" class="btn-primary">Order Online</a>
+  </div>
+
+  <!-- Greek atmosphere banner -->
+  <div class="menu-greek-banner">
+    <div class="menu-greek-banner-line"></div>
+    <span class="menu-greek-banner-text">Ψωμί, αλάτι και καλή καρδιά &nbsp;·&nbsp; Bread, Salt &amp; Good Heart</span>
+  </div>
+
+  <!-- Tabs -->
+  <div class="menu-tabs">
+    <button class="menu-tab active" onclick="showTab('island-mezza', this)">Island Mezza</button>
+    <button class="menu-tab" onclick="showTab('cheese-plate', this)">Cheese Plates</button>
+    <button class="menu-tab" onclick="showTab('trad-mezza', this)">Traditional Mezza</button>
+    <button class="menu-tab" onclick="showTab('soups-salads', this)">Soups &amp; Salads</button>
+    <button class="menu-tab" onclick="showTab('pasta', this)">Pasta</button>
+    <button class="menu-tab" onclick="showTab('fish', this)">Fish &amp; Seafood</button>
+    <button class="menu-tab" onclick="showTab('steaks', this)">Steaks</button>
+    <button class="menu-tab" onclick="showTab('traditional', this)">Traditional</button>
+    <button class="menu-tab" onclick="showTab('chicken', this)">Chicken</button>
+    <button class="menu-tab" onclick="showTab('sandwiches', this)">Sandwiches</button>
+    <button class="menu-tab" onclick="showTab('desserts', this)">Desserts</button>
+  </div>
+
+  <!-- ISLAND MEZZA -->
+  <div id="island-mezza" class="menu-panel active">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1203a464f95.jpg" alt="Island Mezza" loading="lazy">
+      <div>
+        <div class="menu-category-title">Island Mezza <em>Fresh from the sea</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a11fde95971b.jpg" alt="Shrimp Cocktail" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Shrimp Cocktail</span><span class="menu-item-price">$21</span></div>
+        <p class="menu-item-desc">Jumbo shrimps with our special Greek cocktail sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a11fe6ba4f09.jpg" alt="Oysters" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Oysters</span><span class="menu-item-price">$3.50 ea</span></div>
+        <p class="menu-item-desc">East, West &amp; Japanese oysters with our special Greek oyster sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a11ffa81029f.jpg" alt="Shellfish Tower" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Shellfish Tower</span><span class="menu-item-price">$65</span></div>
+        <p class="menu-item-desc">Two sizes — medium &amp; large. Shrimps, clams, mussels, lobster &amp; oysters.</p>
+        <span class="menu-item-tag">Share &amp; Celebrate</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13656b979de.jpg" alt="Plaka Shrimps" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Plaka Shrimps (Fondue)</span><span class="menu-item-price">$25</span></div>
+        <p class="menu-item-desc">Shrimps &amp; calamari diving into a cheese ocean with green pepper.</p>
+        <span class="menu-item-tag">House Specialty</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a12011cd9944.jpg" alt="Kalamarakia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kalamarakia</span><span class="menu-item-price">$18</span></div>
+        <p class="menu-item-desc">Pan-fried or sautéed calamari with Peto's sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1202e04cd26.jpg" alt="Shrimp / Calamari Saganaki" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Shrimp / Calamari Saganaki</span><span class="menu-item-price">$24</span></div>
+        <p class="menu-item-desc">Pan-fried shrimps or cuttlefish with tomato sauce, green pepper &amp; feta.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1203a464f95.jpg" alt="Xtapodi" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Xtapodi</span><span class="menu-item-price">$23</span></div>
+        <p class="menu-item-desc">Grilled octopus with Greek marinade, served over silky mashed potatoes.</p>
+        <span class="menu-item-tag">Most Loved</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a12041421b95.jpg" alt="Mydia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Mydia</span><span class="menu-item-price">$23</span></div>
+        <p class="menu-item-desc">Special big mussels with white wine and Greek marinade, served with garlic bread.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a120b1b8e904.jpg" alt="Taramosalata" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Taramosalata</span><span class="menu-item-price">$15</span></div>
+        <p class="menu-item-desc">Mixed caviar and smoked salty fish with Greek seasoning.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHEESE PLATES -->
+  <div id="cheese-plate" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132b6d6a0e9.jpg" alt="Cheese Plates" loading="lazy">
+      <div>
+        <div class="menu-category-title">Cheese Plates <em>From the Greek table</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132b6d6a0e9.jpg" alt="Saganaki" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Saganaki</span><span class="menu-item-price">$14</span></div>
+        <p class="menu-item-desc">Pan-fried Kefalograviera cheese, golden and crisp, flamed tableside. A Greek ritual.</p>
+        <span class="menu-item-tag">Chef's Signature</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132c22d022f.jpg" alt="Bouyiourdi" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Bouyiourdi</span><span class="menu-item-price">$19</span></div>
+        <p class="menu-item-desc">Four kinds of Greek cheese melted in a clay bowl with green pepper, Kalamata &amp; pepperoncini.</p>
+        <span class="menu-item-tag">House Specialty</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132ca5be681.jpg" alt="Feta" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Feta</span><span class="menu-item-price">$17</span></div>
+        <p class="menu-item-desc">Plain feta with Kalamata, tomatoes, cucumber, oregano and olive oil — served with ciabatta.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132d12654fc.jpg" alt="Halloumi Saganaki" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Halloumi Saganaki</span><span class="menu-item-price">$18</span></div>
+        <p class="menu-item-desc">Special grilled Greek cheese — crisp outside, melting within.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132d5e7f2e5.jpg" alt="Tirokafteri" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Tirokafteri</span><span class="menu-item-price">$14</span></div>
+        <p class="menu-item-desc">Whipped feta, roasted pepper, red flakes &amp; tomatoes served with ciabatta.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132dd16e9e8.jpg" alt="Cheese Pikilia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Cheese Pikilia</span><span class="menu-item-price">$22</span></div>
+        <p class="menu-item-desc">Four of the best Greek cheeses with Greek fig jam and honey.</p>
+        <span class="menu-item-tag">Perfect to Share</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRADITIONAL MEZZA -->
+  <div id="trad-mezza" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132f6454c14.jpg" alt="Traditional Mezza" loading="lazy">
+      <div>
+        <div class="menu-category-title">Traditional Mezza <em>Starters &amp; small plates</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13370c9a0c1.jpg" alt="Koukouvayia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Koukouvayia</span><span class="menu-item-price">$17</span></div>
+        <p class="menu-item-desc">Bruschetta with garlic bread, Kalamata, tomato and crumbled feta cheese.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132ecfb1426.jpg" alt="Mezza Plate" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Mezza Plate</span><span class="menu-item-price">$28</span></div>
+        <p class="menu-item-desc">Meatball, feta, dolmades, Kalamata, hummus — the Greek table in one plate.</p>
+        <span class="menu-item-tag">Great to Share</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a132f6454c14.jpg" alt="Peto's Platter" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Peto's Platter</span><span class="menu-item-price">$25</span></div>
+        <p class="menu-item-desc">Tirokafteri, hummus, tzatziki, Kalamata, feta — the perfect introduction to our kitchen.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1330403e0b5.jpg" alt="Spanakopita" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Spanakopita</span><span class="menu-item-price">$17</span></div>
+        <p class="menu-item-desc">Crispy filo dough lovingly stuffed with spinach and feta, served with side salad.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1330f017414.jpg" alt="Skordalia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Skordalia</span><span class="menu-item-price">$12</span></div>
+        <p class="menu-item-desc">Greek mashed potatoes with garlic, parsley and red flakes, served with pita.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1331459256d.jpg" alt="Tiropitakia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Tiropitakia</span><span class="menu-item-price">$13</span></div>
+        <p class="menu-item-desc">Filo dough stuffed with creamy feta cheese.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1331fcd8848.jpg" alt="Feta e Miele" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Feta e Miele</span><span class="menu-item-price">$16</span></div>
+        <p class="menu-item-desc">Filo dough stuffed with feta, covered with honey and sesame.</p>
+        <span class="menu-item-tag">Sweet &amp; Savory</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1332916a84c.jpg" alt="Dolmadakia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Dolmadakia</span><span class="menu-item-price">$14</span></div>
+        <p class="menu-item-desc">Stuffed Greek leaves with ground beef and rice, served with tzatziki sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6431b90b46c35.jpg" alt="Kolokothakia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kolokothakia</span><span class="menu-item-price">$14</span></div>
+        <p class="menu-item-desc">Fried squash with Greek seasoning, served with tzatziki.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1333fd7e47a.jpg" alt="Kreatopita" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kreatopita</span><span class="menu-item-price">$15</span></div>
+        <p class="menu-item-desc">Filo dough stuffed with seasoned ground beef.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6431b79c83f80.jpg" alt="Falafel" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Falafel</span><span class="menu-item-price">$13</span></div>
+        <p class="menu-item-desc">Fried ground fava bean with green herbs, served with tahini sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6431c362349aa.png" alt="Patzaria" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Patzaria (Beets)</span><span class="menu-item-price">$14</span></div>
+        <p class="menu-item-desc">Pickled beets with olive oil, crumbled feta, roasted pecan, raisins and Peto's dressing.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133516131be.jpg" alt="Hummus" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Hummus</span><span class="menu-item-price">$13</span></div>
+        <p class="menu-item-desc">Ground chickpeas with tahini sauce, served with pita.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13359811b6f.jpg" alt="MelitzanoSalata" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">MelitzanoSalata</span><span class="menu-item-price">$13</span></div>
+        <p class="menu-item-desc">Roasted eggplant, green pepper &amp; roasted pepper, served with pita.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-68d06900594ff.jpg" alt="Tzatziki" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Tzatziki</span><span class="menu-item-price">$4.50</span></div>
+        <p class="menu-item-desc">Greek yogurt with cucumber and garlic, served with pita bread.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOUPS & SALADS -->
+  <div id="soups-salads" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1337b924819.jpg" alt="Soups & Salads" loading="lazy">
+      <div>
+        <div class="menu-category-title">Soups &amp; Salads <em>Fresh &amp; nourishing</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1337b924819.jpg" alt="Avgolemono" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Avgolemono</span><span class="menu-item-price">$12</span></div>
+        <p class="menu-item-desc">The classic Greek chicken lemon soup — silky, bright and comforting.</p>
+        <span class="menu-item-tag">Traditional</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13384c81e6e.jpg" alt="Fakes" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Fakes (Lentil Soup)</span><span class="menu-item-price">$12</span></div>
+        <p class="menu-item-desc">Hearty Greek lentil soup seasoned with olive oil and Mediterranean herbs.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_654c556b5d8fc.jpg" alt="Horiatiki" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Horiatiki</span><span class="menu-item-price">$15</span></div>
+        <p class="menu-item-desc">Traditional Greek salad — tomatoes, cucumber, onion, Kalamata and feta cheese.</p>
+        <span class="menu-item-tag">Classic</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_654c56a6731a5.jpg" alt="Maroulosalata" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Maroulosalata</span><span class="menu-item-price">$15</span></div>
+        <p class="menu-item-desc">Lettuce, scallions, dill and crumbled feta cheese.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_654c5dbf3ed32.jpg" alt="Peto's Arugula Salad" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Peto's Arugula Salad</span><span class="menu-item-price">$16</span></div>
+        <p class="menu-item-desc">Arugula, onion, feta cheese, pecan with Peto's dressing and extra virgin olive oil.</p>
+        <span class="menu-item-tag">House Specialty</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1339ed0c90e.jpg" alt="Watermelon Salad" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Watermelon (Seasonal)</span><span class="menu-item-price">$17</span></div>
+        <p class="menu-item-desc">Watermelon, feta, oregano and fresh mint — summer in a bowl.</p>
+        <span class="menu-item-tag">Seasonal</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133a7672520.jpg" alt="Calamari Cold Salad" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Calamari (Cold)</span><span class="menu-item-price">$18</span></div>
+        <p class="menu-item-desc">Boiled calamari with parsley, Kalamata and cucumber.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Atmospheric divider -->
+  <div class="menu-scene-divider" style="display:none;" id="scene-pasta">
+    <span class="menu-scene-quote">Every pasta tells a Greek island story</span>
+  </div>
+
+  <!-- PASTA -->
+  <div id="pasta" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133d7dbd51f.jpg" alt="Pasta" loading="lazy">
+      <div>
+        <div class="menu-category-title">Pasta <em>Island-named, Mediterranean-soul</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133be32dcce.jpg" alt="Pastitsio" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Pastitsio</span><span class="menu-item-price">$27</span></div>
+        <p class="menu-item-desc">House-made from scratch — pasta, ground beef, garlic tomato sauce, béchamel and Mizithra cheese.</p>
+        <span class="menu-item-tag">House-Made</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133c191f6ca.jpg" alt="Athens" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Athens</span><span class="menu-item-price">$22</span></div>
+        <p class="menu-item-desc">Pappardelle with garlic ground beef tomato sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133ca9af405.jpg" alt="Crete" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Crete</span><span class="menu-item-price">$18</span></div>
+        <p class="menu-item-desc">Parsley, garlic, red flakes, Kefalograviera cheese and olive oil.</p>
+        <span class="menu-item-tag">Vegetarian</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133d7dbd51f.jpg" alt="Santorini" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Santorini</span><span class="menu-item-price">$29</span></div>
+        <p class="menu-item-desc">Mussels, calamari, shrimps with garlic tomato sauce. The sea on a plate.</p>
+        <span class="menu-item-tag">Island Inspired</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133dc5959da.jpg" alt="Mykonos" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Mykonos</span><span class="menu-item-price">$22</span></div>
+        <p class="menu-item-desc">Spinach, garlic, olive oil, fresh tomato with a light creamy sauce.</p>
+        <span class="menu-item-tag">Vegetarian</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133e1c37b40.jpg" alt="Naxos Mavro" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Naxos Mavro</span><span class="menu-item-price">$34</span></div>
+        <p class="menu-item-desc">Lobster tail, shrimps with garlic tomato octopus ink sauce. Dramatic and delicious.</p>
+        <span class="menu-item-tag">Signature</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133eea8c018.jpg" alt="Piraeus" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Piraeus</span><span class="menu-item-price">$24</span></div>
+        <p class="menu-item-desc">Chicken, sundried tomatoes with a white creamy wine sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133f506255d.jpg" alt="Corfu" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Corfu</span><span class="menu-item-price">$25</span></div>
+        <p class="menu-item-desc">Clams, shallots, garlic &amp; parsley with a butter wine sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a133f9ea2032.jpg" alt="Thessalonica" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Thessalonica</span><span class="menu-item-price">$24</span></div>
+        <p class="menu-item-desc">Calamari with wine and parsley sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1340322d192.jpg" alt="Tortellini" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Tortellini</span><span class="menu-item-price">$28</span></div>
+        <p class="menu-item-desc">Squid-ink pasta filled with salmon, ricotta &amp; Gran Padano in a white wine sauce.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13441e9e4d0.jpg" alt="Ravioli" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Ravioli</span><span class="menu-item-price">$26</span></div>
+        <p class="menu-item-desc">Stuffed with spinach and cheese with creamy tomato sauce.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FISH & SEAFOOD -->
+  <div id="fish" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1344d6a8dc9.jpg" alt="Fish" loading="lazy">
+      <div>
+        <div class="menu-category-title">Fish &amp; Seafood Signatures <em>Freshly sourced, daily</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1344d6a8dc9.jpg" alt="Sea Bass" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Sea Bass</span><span class="menu-item-price">Market Price</span></div>
+        <p class="menu-item-desc">Whole fish, grilled or oven-roasted, served with rice and potatoes.</p>
+        <span class="menu-item-tag">Fresh Daily</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13451a80680.jpg" alt="Salmon" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Salmon</span><span class="menu-item-price">Market Price</span></div>
+        <p class="menu-item-desc">Pan-fried or oven-roasted, served with rice and potatoes.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1345cc37817.jpg" alt="Grilled Shrimps" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Grilled Shrimps</span><span class="menu-item-price">$38</span></div>
+        <p class="menu-item-desc">Jumbo shrimps over creamy black risotto. Luxurious sea and earth.</p>
+        <span class="menu-item-tag">Must Try</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134636344b6.jpg" alt="Grouper" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Grouper</span><span class="menu-item-price">Market Price</span></div>
+        <p class="menu-item-desc">Served with shrimp risotto.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13466fc368d.jpg" alt="Kakavia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kakavia</span><span class="menu-item-price">$34</span></div>
+        <p class="menu-item-desc">Traditional fisherman's stew — mussels, shrimps, calamari, scallops. Hearty and soulful.</p>
+        <span class="menu-item-tag">Fisherman's Classic</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEAKS -->
+  <div id="steaks" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13474708358.jpg" alt="Steaks" loading="lazy">
+      <div>
+        <div class="menu-category-title">Steaks <em>Premium cuts, Greek seasoned</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13474708358.jpg" alt="Filet Mignon" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Filet Mignon</span><span class="menu-item-price">$38</span></div>
+        <p class="menu-item-desc">Grilled with Greek sauce, served with rice.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13478176e1c.jpg" alt="Lapa" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Lapa (Flank Steak &amp; Frites)</span><span class="menu-item-price">$32</span></div>
+        <p class="menu-item-desc">Grilled flank steak served with French fries.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134857ae9a9.jpg" alt="Veal Tomahawk" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Veal Tomahawk</span><span class="menu-item-price">$69</span></div>
+        <p class="menu-item-desc">14–16oz pan-fried with Greek herbs, served with creamy fettuccine. For the true feast.</p>
+        <span class="menu-item-tag">Chef's Table</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1348fe4e036.jpg" alt="Ribeye" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Ribeye</span><span class="menu-item-price">From $29</span></div>
+        <p class="menu-item-desc">Pan-grilled with Greek sauce, served with mashed potatoes. Available in 12oz ($29), 16oz ($46), 20oz ($56).</p>
+        <span class="menu-item-tag">Premium Cut</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRADITIONAL -->
+  <div id="traditional" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6406c3c7cb6f3.jpg" alt="Traditional" loading="lazy">
+      <div>
+        <div class="menu-category-title">Traditional <em>Greek heritage on every plate</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6406c3c7cb6f3.jpg" alt="Moussaka" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Moussaka</span><span class="menu-item-price">$21.90</span></div>
+        <p class="menu-item-desc">The iconic Greek classic — eggplant, zucchini, ground beef in garlic tomato sauce with béchamel.</p>
+        <span class="menu-item-tag">Traditional</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134afbc76ab.jpg" alt="Paidakia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Paidakia (Lamb Chops)</span><span class="menu-item-price">$43</span></div>
+        <p class="menu-item-desc">Grilled lamb chops served with homemade Greek potatoes and a crisp salad.</p>
+        <span class="menu-item-tag">Premium Cut</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134c14a06e1.jpg" alt="Pikilia Kreaton" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Pikilia Kreaton (Mix Grill)</span><span class="menu-item-price">$40</span></div>
+        <p class="menu-item-desc">Served with homemade fries and salad.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134c6e598cf.jpg" alt="Brizola" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Brizola (Pork Chops)</span><span class="menu-item-price">$38</span></div>
+        <p class="menu-item-desc">16oz served with mashed potatoes.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134cb98301f.jpg" alt="Kotsi" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kotsi (Pork Shank)</span><span class="menu-item-price">$43</span></div>
+        <p class="menu-item-desc">Slow-cooked pork shank served with Greek potatoes.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134d45a0990.jpg" alt="Arni Kleftiko" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Arni Kleftiko (Roasted Lamb)</span><span class="menu-item-price">$33</span></div>
+        <p class="menu-item-desc">Slow-roasted lamb, tender and falling off the bone, served with rice and mashed potatoes.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134ed44d393.jpg" alt="Lamb Shank" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Lamb Shank</span><span class="menu-item-price">$40</span></div>
+        <p class="menu-item-desc">Roasted lamb shank served with rice.</p>
+        <span class="menu-item-tag">Slow Roasted</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6406c2b8a1706.jpg" alt="Souvlaki" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Souvlaki</span><span class="menu-item-price">$22</span></div>
+        <p class="menu-item-desc">Traditional skewers of chicken, pork, kebob or shrimps — grilled over flame with fries.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6406c47c58126.jpg" alt="Mix Grill" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Mix Grill</span><span class="menu-item-price">$40</span></div>
+        <p class="menu-item-desc">Three skewers — chicken, pork, lamb and kebob. A traditional celebration plate.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6403bb6a81b2f.jpg" alt="Spanakopita Main" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Spanakopita</span><span class="menu-item-price">$16.90</span></div>
+        <p class="menu-item-desc">Phyllo dough stuffed with spinach and feta.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_6a1360233a8c0.jpg" alt="Pikilia" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Pikilia</span><span class="menu-item-price">$36</span></div>
+        <p class="menu-item-desc">Roasted lamb, moussaka, pastitsio, spanakopita, dolmades and roasted potatoes. Greek at its finest.</p>
+        <span class="menu-item-tag">The Full Greek Feast</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1360b12c87b.jpg" alt="Stifado" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Stifado (Lamb Stew)</span><span class="menu-item-price">$33</span></div>
+        <p class="menu-item-desc">Slow-braised lamb stew with rice and potatoes.</p>
+        <span class="menu-item-tag">Slow Cooked</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHICKEN -->
+  <div id="chicken" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13505542bc3.jpg" alt="Chicken" loading="lazy">
+      <div>
+        <div class="menu-category-title">Chicken Signatures <em>Light, bright &amp; Greek</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a134f9d4e88b.jpg" alt="Plicata" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Plicata</span><span class="menu-item-price">$27</span></div>
+        <p class="menu-item-desc">Chicken breast with piccata sauce, served with rice.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13505542bc3.jpg" alt="Chicken Greek Lemon" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Chicken Greek Lemon</span><span class="menu-item-price">$28</span></div>
+        <p class="menu-item-desc">Roasted half chicken served with potatoes and herbs.</p>
+        <span class="menu-item-tag">Family Favorite</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1351dcee8d7.jpg" alt="Zoe" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Zoe</span><span class="menu-item-price">$26</span></div>
+        <p class="menu-item-desc">Chicken breast stuffed with spinach and feta, served with rice.</p>
+        <span class="menu-item-tag">House Specialty</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANDWICHES -->
+  <div id="sandwiches" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1361d1aa3fb.jpg" alt="Sandwiches" loading="lazy">
+      <div>
+        <div class="menu-category-title">Sandwiches <em>Street food, Greek style</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a13617498361.jpg" alt="Souvlaki Sandwich" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Souvlaki</span><span class="menu-item-price">$18</span></div>
+        <p class="menu-item-desc">Pork, lamb or chicken — pita bread or baguette, served with French fries.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1361d1aa3fb.jpg" alt="Gyros" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Gyros</span><span class="menu-item-price">$18</span></div>
+        <p class="menu-item-desc">Authentic Greek gyros (chicken, lamb or pork) in pita or baguette with fries.</p>
+        <span class="menu-item-tag">Authentic</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6407b99a4b881.jpg" alt="Falafel Sandwich" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Falafel</span><span class="menu-item-price">$16</span></div>
+        <p class="menu-item-desc">Traditional falafel sandwich in pita or baguette with French fries.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6407ba68bcd77.jpg" alt="Greek Burger" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Greek Burger</span><span class="menu-item-price">$16.90</span></div>
+        <p class="menu-item-desc">Ground lamb and beef mixed with Greek spices, served with French fries.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6407bcf1888cd.jpg" alt="Shrimp Sandwich" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Shrimp</span><span class="menu-item-price">$22</span></div>
+        <p class="menu-item-desc">Grilled shrimp sandwich in French baguette, served with French fries.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_6421114531319.jpg" alt="Calamari Sandwich" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Calamari</span><span class="menu-item-price">$22</span></div>
+        <p class="menu-item-desc">Traditional calamari sandwich in lavash or French baguette with French fries.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://files.cdn-files-a.com/uploads/1148603/800_gi-6a1362af61d35.jpg" alt="Kebob" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kebob</span><span class="menu-item-price">$18</span></div>
+        <p class="menu-item-desc">Mixed ground lamb and beef served in pita or baguette.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div id="desserts" class="menu-panel">
+    <div class="menu-category-header">
+      <img class="menu-category-img" src="https://images.cdn-files-a.com/uploads/1148603/800_63dc689d07583.png" alt="Desserts" loading="lazy">
+      <div>
+        <div class="menu-category-title">Desserts <em>Sweet endings, Greek traditions</em></div>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_63dc689d07583.png" alt="Baklava Pistachios" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Baklava Pistachios</span><span class="menu-item-price">$7.90</span></div>
+        <p class="menu-item-desc">Classic layered phyllo with pistachios and honey syrup. Crisp, sweet, unforgettable.</p>
+        <span class="menu-item-tag">Traditional</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641e2e9753b8d.png" alt="Dark Chocolate Baklava" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Dark Chocolate Baklava</span><span class="menu-item-price">$10.90</span></div>
+        <p class="menu-item-desc">A Naxos tradition — baklava reinvented with dark chocolate and pistachios.</p>
+        <span class="menu-item-tag">House Specialty</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641fdc4d0d619.jpg" alt="Cold Milky Baklava" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Cold Milky Baklava</span><span class="menu-item-price">$8</span></div>
+        <p class="menu-item-desc">Milk chocolate baklava with pistachios — served chilled.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641fd9afceb9a.jpg" alt="Baklava Carrot Shape" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Baklava Pistachios (Carrot Shape)</span><span class="menu-item-price">$8</span></div>
+        <p class="menu-item-desc">Baklava with pistachios in a beautiful carrot shape.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641fe40015cee.jpg" alt="Baklava Lips" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Baklava Lips</span><span class="menu-item-price">$9</span></div>
+        <p class="menu-item-desc">Lip-shaped baklava with pistachios — as elegant as it is delicious.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_63dc69287891e.jpg" alt="Galaktoboureko" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Galaktoboureko</span><span class="menu-item-price">$7.90</span></div>
+        <p class="menu-item-desc">Crispy phyllo filled with silky semolina custard, soaked in light lemon syrup.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641e32be3f2c2.jpg" alt="Kadaifi Royal" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kadaifi Royal Pistachios</span><span class="menu-item-price">$8</span></div>
+        <p class="menu-item-desc">Shredded phyllo with honey and whole pistachios. A regal end to any meal.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641e336ed77fe.jpg" alt="Kadaifi Pistachios" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Kadaifi with Pistachios</span><span class="menu-item-price">$8</span></div>
+        <p class="menu-item-desc">Shredded phyllo dough with honey-glazed pistachios.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641e33c9d226b.jpg" alt="Royal Finger Kadaifi" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Royal Finger Kadaifi</span><span class="menu-item-price">$9</span></div>
+        <p class="menu-item-desc">Finger-shaped shredded phyllo dough with nuts and honey.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641fe1d923428.jpg" alt="Loukoumades" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Loukoumades</span><span class="menu-item-price">$8</span></div>
+        <p class="menu-item-desc">Fluffy Greek honey donuts, drizzled with honey and served warm. Pure comfort.</p>
+        <span class="menu-item-tag">Crowd Favorite</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_641fe50d6dbf0.jpg" alt="Mussels Baklava" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Mussels Baklava</span><span class="menu-item-price">$9</span></div>
+        <p class="menu-item-desc">Pistachio-stuffed mussel-shaped baklava.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_64f6413b924bb.jpg" alt="Cheesecake Baklava" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Cheesecake Baklava</span><span class="menu-item-price">$9.90</span></div>
+        <p class="menu-item-desc">Phyllo dough stuffed with cheese and nuts — the best of two worlds.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_64f642c76baa5.jpg" alt="Bougatsa" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Bougatsa</span><span class="menu-item-price">$9.90</span></div>
+        <p class="menu-item-desc">Phyllo dough with custard, powdered sugar and cinnamon — served piping hot.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img-wrap">
+          <img class="menu-item-img" src="https://images.cdn-files-a.com/uploads/1148603/800_64f643ea83609.jpg" alt="Pistachios Bougatsa" loading="lazy">
+        </div>
+        <div class="menu-item-header"><span class="menu-item-name">Pistachios Bougatsa</span><span class="menu-item-price">$11</span></div>
+        <p class="menu-item-desc">Phyllo dough with pistachios and honey — a luxurious finish.</p>
+        <span class="menu-item-tag">Premium</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-cta">
+    <a href="https://order.online/business/petos-family-230146" target="_blank" class="btn-primary" style="margin-right: 1rem;">Order Online</a>
+    <a href="https://www.petosfamily.com/restaurant-menu" target="_blank" class="btn-outline" style="color: var(--ink-soft); border-color: var(--sand);">View Full Menu</a>
+  </div>
+</section>
+
+<!-- Experience / Service -->
+<section class="experience-section" id="experience">
+  <div class="experience-inner">
+    <div>
+      <p class="section-label">The Peto's Experience</p>
+      <h2 class="section-title">More Than a Meal —<br><em>A Greek Welcome</em></h2>
+      <p class="experience-lead">
+        We believe the best hospitality is invisible — you feel it in the warmth of your greeting, the attentiveness of your server, the flambé at your table. Every visit to Peto's is crafted to feel like you're dining with family in Greece.
+      </p>
+    </div>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-card-icon">✦</div>
+        <div>
+          <p class="service-card-title">Attentive, Personalized Service</p>
+          <p class="service-card-text">Our team goes beyond the standard — we remember your preferences and treat every guest as our most important one.</p>
+          <div class="service-card-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🫒</div>
+        <div>
+          <p class="service-card-title">Tableside Saganaki Ceremony</p>
+          <p class="service-card-text">Watch your cheese flambéed right before you — a theatrical, authentic Greek tradition that sets the tone for a memorable evening.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🌊</div>
+        <div>
+          <p class="service-card-title">Fresh Daily From Source</p>
+          <p class="service-card-text">Our seafood and produce arrive fresh daily. No frozen shortcuts — only honest, quality ingredients prepared the Greek way.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🎁</div>
+        <div>
+          <p class="service-card-title">Gift Cards &amp; Private Events</p>
+          <p class="service-card-text">Share the experience — Peto's gift cards and private dining make any occasion extraordinary.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+  <p class="section-label">Guest Stories</p>
+  <h2 class="section-title">What Our Guests <em>Say</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span></div>
+      <div class="testimonial-quote-mark">"</div>
+      <p class="testimonial-text">The Saganaki was incredible — flamed right at our table. The octopus was perfectly grilled and the service was warm and professional throughout. This is the real deal.</p>
+      <div class="testimonial-author"><p class="testimonial-name">Michael T.</p><p class="testimonial-source">Google Review · Carmel, IN</p></div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span></div>
+      <div class="testimonial-quote-mark">"</div>
+      <p class="testimonial-text">Peto's reminded me of the tavernas we visited in Athens — honest food, generous portions, and a staff that genuinely cares. The Pastitsio is house-made perfection.</p>
+      <div class="testimonial-author"><p class="testimonial-name">Sara L.</p><p class="testimonial-source">Yelp Review · Indianapolis</p></div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span><span class="star" style="color: var(--gold);">★</span></div>
+      <div class="testimonial-quote-mark">"</div>
+      <p class="testimonial-text">Best Greek restaurant in Indiana. The lamb chops were exceptional. The team took time to explain every dish to us. We'll be back every chance we get — thank you Peto's!</p>
+      <div class="testimonial-author"><p class="testimonial-name">James &amp; Elaine R.</p><p class="testimonial-source">Google Review · Fishers, IN</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Reservation -->
+<section class="reservation-section" id="reservation">
+  <div class="reservation-content">
+    <p class="section-label">Reservations</p>
+    <h2 class="section-title">Book Your <em>Table</em></h2>
+    <p style="font-size: 1rem; color: var(--muted); margin: 1.2rem 0 2.5rem; line-height: 1.7;">
+      Reserve your place at the table — for an intimate dinner, a celebration, or simply a night of great Greek food.
+    </p>
+    <div class="form-group form-row">
+      <div><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Nikos"></div>
+      <div><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Papadopoulos"></div>
+    </div>
+    <div class="form-group form-row">
+      <div><label class="form-label">Date</label><input type="date" class="form-input"></div>
+      <div><label class="form-label">Time</label><select class="form-select"><option>5:00 PM</option><option>5:30 PM</option><option>6:00 PM</option><option>6:30 PM</option><option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option><option>8:30 PM</option><option>9:00 PM</option></select></div>
+    </div>
+    <div class="form-group form-row">
+      <div><label class="form-label">Guests</label><select class="form-select"><option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6+ Guests</option></select></div>
+      <div><label class="form-label">Phone</label><input type="tel" class="form-input" placeholder="(317) 000-0000"></div>
+    </div>
+    <a href="https://reservations.shift4payments.com/#/202ab6f6-0ede-4c4b-979f-6d3f1d4e269a" target="_blank" class="btn-primary" style="margin-top: 0.5rem;">Complete Reservation →</a>
+  </div>
+  <div class="reservation-aside">
+    <div class="aside-item"><p class="aside-item-label">Address</p><p class="aside-item-value">15 W. Main Street<br>Carmel, IN 46032</p></div>
+    <hr class="aside-divider">
+    <div class="aside-item"><p class="aside-item-label">Reservations</p><p class="aside-item-value"><a href="tel:+13178101000">(317) 810-1000</a></p></div>
+    <div class="aside-item"><p class="aside-item-label">General Inquiries</p><p class="aside-item-value"><a href="tel:+13178536837">(317) 853-6837</a></p></div>
+    <hr class="aside-divider">
+    <div class="aside-item">
+      <p class="aside-item-label">Hours</p>
+      <div style="margin-top: 0.5rem;">
+        <p style="font-family: Jost, sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.75); margin-bottom: 0.3rem; font-weight: 300;">Mon – Thu: 11am – 9:30pm</p>
+        <p style="font-family: Jost, sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.75); margin-bottom: 0.3rem; font-weight: 300;">Fri – Sat: 11am – 10:30pm</p>
+        <p style="font-family: Jost, sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.75); font-weight: 300;">Sunday: 12pm – 9pm</p>
+      </div>
+    </div>
+    <hr class="aside-divider">
+    <div class="aside-item"><p class="aside-item-label">Email</p><p class="aside-item-value"><a href="mailto:Contact@PETOSFAMILY.COM">Contact@petosfamily.com</a></p></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-logo-main">Peto's</p>
+      <p class="footer-logo-sub">Greek Cuisine · Carmel, IN</p>
+      <p class="footer-tagline">Bringing the heart and soul of authentic Greek cooking to the streets of Carmel, Indiana.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="https://www.petosfamily.com/jobs" target="_blank">Join Our Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Dine With Us</p>
+      <ul class="footer-links">
+        <li><a href="#reservation">Make a Reservation</a></li>
+        <li><a href="https://order.online/business/petos-family-230146" target="_blank">Order Online</a></li>
+        <li><a href="https://services.shift4.com/gc/PETOS" target="_blank">Gift Cards</a></li>
+        <li><a href="mailto:Contact@PETOSFAMILY.COM">Private Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Find Us</p>
+      <div class="footer-contact-item">15 W. Main Street<br>Carmel, IN 46032</div>
+      <div class="footer-contact-item"><a href="tel:+13178101000">(317) 810-1000</a></div>
+      <div class="footer-contact-item"><a href="mailto:Contact@PETOSFAMILY.COM">Contact@petosfamily.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Peto's Greek Cuisine. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/pg/chezpetos/photos/" target="_blank" class="social-btn" title="Facebook">f</a>
+      <a href="mailto:Contact@PETOSFAMILY.COM" class="social-btn" title="Email">@</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (btn) btn.classList.add('active');
+    else event.target.classList.add('active');
+  }
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.padding = '0.8rem 3rem';
+      nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+    } else {
+      nav.style.padding = '1.2rem 3rem';
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
