@@ -1,0 +1,79 @@
+// ============================================================
+// PETO'S GREEK CUISINE — Design Tokens
+// ============================================================
+
+// ----- Color Palette -----
+$color-cream:            #F7FAFD;
+$color-parchment:        #E8F0F7;
+$color-sand:             #CAD8E6;
+$color-terracotta:       #0B4F8A;
+$color-terracotta-dark:  #073B68;
+$color-terracotta-light: #3B8DCC;
+$color-olive:            #2F6F9F;
+$color-olive-light:      #6AA8D8;
+$color-aegean:           #0B5FA5;
+$color-aegean-dark:      #082C55;
+$color-aegean-light:     #D8ECFA;
+$color-gold:             #C9963A;
+$color-gold-light:       #E5B85A;
+$color-ink:              #10243A;
+$color-ink-soft:         #2D4258;
+$color-muted:            #637487;
+$color-white:            #FFFFFF;
+
+// Semantic aliases
+$brand-primary:   $color-terracotta;
+$brand-secondary: $color-aegean;
+$brand-accent:    $color-gold;
+$text-base:       $color-ink;
+$text-muted:      $color-muted;
+$bg-base:         $color-cream;
+$bg-light:        $color-white;
+
+// ----- Typography -----
+$font-serif:     'Playfair Display', Georgia, serif;
+$font-body:      'Cormorant Garamond', Georgia, serif;
+$font-ui:        'Jost', system-ui, sans-serif;
+
+$font-size-base:  1rem;       // 16px
+$line-height-base: 1.7;
+
+// Fluid type scale (clamp)
+$type-hero:    clamp(3.5rem, 7vw, 6rem);
+$type-section: clamp(2.2rem, 4vw, 3.2rem);
+$type-lead:    clamp(1.1rem, 2vw, 1.4rem);
+
+// ----- Spacing -----
+$space-xs:  0.5rem;
+$space-sm:  1rem;
+$space-md:  1.5rem;
+$space-lg:  2rem;
+$space-xl:  3rem;
+$space-2xl: 5rem;
+$space-3xl: 7rem;
+
+$section-padding-y: $space-3xl;
+$section-padding-x: $space-xl;
+
+// ----- Layout -----
+$container-max:   1400px;
+$nav-height:      72px;
+$border-radius:   2px;
+
+// ----- Transitions -----
+$transition-fast:   0.2s ease;
+$transition-base:   0.25s ease;
+$transition-slow:   0.3s ease;
+
+// ----- Z-index scale -----
+$z-below:   -1;
+$z-base:     0;
+$z-raised:   10;
+$z-nav:      100;
+$z-modal:    200;
+
+// ----- Breakpoints -----
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg:  900px;
+$bp-xl:  1200px;
